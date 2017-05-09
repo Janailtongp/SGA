@@ -5,13 +5,14 @@ include("head.php");
   function confirmar(){
     // só permitirá o envio se o usuário responder OK
     var resposta = window.confirm("Deseja mesmo" + 
-                   " excluir esta propriedade?");
+                   " excluir esta alocação?");
     if(resposta)
       return true;
     else
       return false; 
   }
 </script>
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -32,34 +33,29 @@ include("head.php");
                 <section class="col-lg-12 connectedSortable">
                     <div class="box">
                         <div class="box-header">
-                            <h3 class="box-title">Minhas Propiedades</h3>
+                            <h3 class="box-title">Meus Contratos</h3>
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Bairro</th>
-                                        <th>Rua</th>
-                                        <th>Numero</th>
-                                        <th>CEP</th>
-                                        <th>Cidade</th>
-                                        <th>Situação</th>
+                                        <th>Iquilino</th>
+                                        <th>Propriedade</th>
                                         <th>Ações</th>
-
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
-                                    require_once '../Controller/PropiedadeController.php';
-                                    $objControl = new PropiedadeController();
-                                    $objControl->listar($_SESSION['idUSU']);
+                                    require_once '../Controller/MensalidadeController.php';
+                                    $objControl = new MensalidadeController();
+                                    $objControl->contratos($_SESSION['idUSU']);
                                     ?>
 
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th> <a href="PROP_cadastro.php"><i class="fa fa-plus-square" aria-hidden="true"></i></a></th>
+                                        <th> <a href="INQ_cadastro.php"><i class="fa fa-plus-square" aria-hidden="true"></i></a></th>
 
 
                                     </tr>
@@ -97,3 +93,4 @@ include("head.php");
 <?php
 include("foot.php");
 ?>
+
