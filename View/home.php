@@ -14,14 +14,28 @@
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>150</h3>
+                <h3>
+                    <?php
+                       $conn = F_conect();
+                    $result = mysqli_query($conn, "call total_inquilinos(".$_SESSION['idUSU'].")");
+                      if (mysqli_num_rows($result)){
+                            while ($row = $result->fetch_assoc()) {
+                                $total_inquilinos=$row['total'];
+                             }
+                             echo $total_inquilinos;
+                      }
+                      
+                        $conn->close();
 
-              <p>New Orders</p>
+                    ?>
+                </h3>
+
+              <p>Inquilinos</p>
             </div>
             <div class="icon">
-              <i class="ion ion-bag"></i>
+              <i class="fa fa-user"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              <a href="INQ_listar.php" class="small-box-footer"> <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -29,14 +43,28 @@
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3>53<sup style="font-size: 20px">%</sup></h3>
+              <h3>
+               <?php
+                        $conn = F_conect();
 
-              <p>Bounce Rate</p>
+                  $result1 = mysqli_query($conn, "call total_propriedades(".$_SESSION['idUSU'].")");
+                      if (mysqli_num_rows($result1)){
+                            while ($row1 = $result1->fetch_assoc()) {
+                                $total_propriedades=$row1['total'];
+                             }
+                             echo $total_propriedades;
+                      }
+                                              $conn->close();
+
+                      ?>   
+              </h3>
+
+              <p>Propriedades</p>
             </div>
             <div class="icon">
-              <i class="ion ion-stats-bars"></i>
+              <i class="fa fa-bank "></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              <a href="PROP_listar.php" class="small-box-footer"> <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -44,12 +72,26 @@
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3>44</h3>
+              <h3>
+                <?php
+                        $conn = F_conect();
 
-              <p>User Registrations</p>
+                  $result2 = mysqli_query($conn, "Select * from total_rendimento where id=".$_SESSION['idUSU']);
+                      if (mysqli_num_rows($result2)){
+                            while ($row2 = $result2->fetch_assoc()) {
+                                $rendimento=$row2['sum(m.valor)'];
+                             }
+                             echo $rendimento;
+                      }
+                                              $conn->close();
+
+                      ?> 
+              </h3>
+
+              <p>Rendimento</p>
             </div>
             <div class="icon">
-              <i class="ion ion-person-add"></i>
+              <i class="ion ion-stats-bars"></i>
             </div>
             <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
