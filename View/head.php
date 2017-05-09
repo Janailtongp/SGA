@@ -120,7 +120,7 @@
         <li><a href="PROP_listar.php"><i class="fa fa-bank"></i> <span>Propriedades</span></a></li>
         <li><a href="INQ_listar.php"><i class="fa fa-user"></i> <span>Inquilinos</span></a></li>
         <li><a href="MEN_listar.php"><i class="fa fa-credit-card"></i> <span>Alugueis</span></a></li>
-        <li><a href="home.php"><i class="fa fa-bar-chart"></i> <span>Relatorios Financeiros</span></a></li>
+        <li><a href="relatorio.php"><i class="fa fa-bar-chart"></i> <span>Relatorios Financeiros</span></a></li>
 
       </ul>
     </section>

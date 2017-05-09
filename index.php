@@ -39,7 +39,7 @@
         ?>
                     </form>
                     <br/>
-                    <button type="button" class="btn btn-link" ><a href="view/USU_cadastro.php">Cadastrar-se</a></button>
+                   <a href="view/USU_cadastro.php">Cadastrar-se</a>
 
                 </div>
                 <div class="col-xs-6">

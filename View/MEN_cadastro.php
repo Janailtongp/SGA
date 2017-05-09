@@ -61,7 +61,7 @@ include("head.php");
                   <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                   </div>
-                  <input type="text" class="form-control pull-right" id="datepicker" name="data_vencimento" placeholder="Dia de Vencimento" required>
+                  <input type="text" class="form-control pull-right" id="datepicker" name="data_vencimento" placeholder="Dia de Inicio"  data-inputmask="'alias': 'dd/mm/yyyy'" data-mask required>
                 </div>
                 <!-- /.input group -->
               </div> 
@@ -73,14 +73,13 @@ include("head.php");
                             <input class="form-control" name="qtd" type="number" placeholder="Quantidade de Meses" required>
                         </div>
                         
-                        <button type="submit" class="btn btn-default" name="botao">Alocar</button>
+                        <button type="submit" class="btn btn-default" name="botao">Cadastrar</button>
                     </form>
                     <?php
-                    require_once '../Controller/PropiedadeController.php';
+                    require_once '../Controller/MensalidadeController.php';
                     if (isset($_POST["botao"])) {
-                        $objControl = new PropiedadeController();
-                        $objControl->Cadastrar($_POST["rua"], $_POST["numero"], $_POST["bairro"], $_POST['cidade']
-                                , $_POST["cep"], $_POST["situacao"], $_POST["obs"]);
+                        $objControl = new MensalidadeController();
+                        $objControl->cadastrarMensalidades($_POST['inquilino'], $_POST['propriedade'], $_POST['data_vencimento'], $_POST['valor'], $_POST['qtd']);
                     }
                     ?>     
 
