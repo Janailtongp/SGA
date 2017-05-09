@@ -31,6 +31,7 @@
   <link rel="stylesheet" href="../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   <!--UFAAAAAAAAAAAAAAAAA-->
 <link rel="stylesheet" href="../plugins/datatables/dataTables.bootstrap.css">
+  <link rel="stylesheet" href="../plugins/select2/select2.min.css">
 
 <script src="../dist/js/app.min.js"></script>
 <script src="../bootstrap/js/bootstrap.min.js"></script>

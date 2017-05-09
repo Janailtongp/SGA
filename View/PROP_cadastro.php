@@ -35,9 +35,14 @@ include("head.php");
                         <div class="form-group">
                             <input class="form-control" name="cep" type="text" placeholder="CEP" required>
                         </div>
-                        <div class="form-group">
-                            <input class="form-control" name="situacao" type="text" placeholder="Situação" required>
-                        </div>
+                      
+                         <div class="form-group">
+                  <select class="form-control" name="situacao" placeholder="Situação">
+                    <option value="Disponível">Disponível</option>
+                    <option value="Indisponível">Indisponível</option>
+                 
+                  </select>
+                </div>
                         <div class="form-group">
                             <input class="form-control" name="obs" type="text" placeholder="Observação" required>
                         </div>

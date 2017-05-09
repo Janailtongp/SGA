@@ -45,6 +45,7 @@ include("head.php");
                                         <th>CEP</th>
                                         <th>Cidade</th>
                                         <th>Situação</th>
+                                        <th>Observação</th>
                                         <th>Ações</th>
 
                                     </tr>

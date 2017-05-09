@@ -55,7 +55,7 @@ include("head.php");
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th> <a href="INQ_cadastro.php"><i class="fa fa-plus-square" aria-hidden="true"></i></a></th>
+                                        <th> <a href="MEN_cadastro.php"><i class="fa fa-plus-square" aria-hidden="true"></i></a></th>
 
 
                                     </tr>

@@ -72,6 +72,8 @@ function listarPropiedade($idUsu) {
             echo"<td>" . $row['cep'] . "</td>";
             echo"<td>" . $row['cidade'] . "</td>";
             echo"<td>" . $row['situacao'] . "</td>";
+            echo"<td>" . $row['observacao'] . "</td>";
+
             echo"<td><a href=PROP_editar.php?id=" . $row['id'] . "><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a>
                         <a onclick='return confirmar();' href=PROP_excluir.php?id=" . $row['id'] . "><i class='fa fa-trash-o' aria-hidden='true'></i></a></td></tr>";
         }
