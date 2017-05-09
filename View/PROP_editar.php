@@ -65,11 +65,9 @@
                         <div class="form-group">
                             <input class="form-control" name="cep" type="text" placeholder="CEP" value="<?php echo $cep ;?>" required>
                         </div>
-                       <select class="form-control" name="situacao" placeholder="Situação">
-                    <option value="Disponível">Disponível</option>
-                    <option value="Indisponível">Indisponível</option>
-                 
-                  </select>
+                        <div class="form-group">
+                            <input class="form-control" name="situacao" type="text" placeholder="Situação" value="<?php echo $situacao;?>" required>
+                        </div>
                         <div class="form-group">
                             <input class="form-control" name="obs" type="text" placeholder="Observação" value="<?php echo $obs;?>"required>
                         </div>
