@@ -11,7 +11,7 @@
     <!-- /.content -->
     <!-- DONUT CHART -->
     <div class="box-body col-lg-6">
-          <div class="box box-danger">
+          <div class="box box-success">
             <div class="box-header with-border">
               <h3 class="box-title"><b>Rendimento por propriedade</b></h3>
 
@@ -28,12 +28,11 @@
             <!-- /.box-body -->
           </div>
     
-    
-    <!-- AREA CHART -->
-    
-            <div class="box-body col-lg-6">
+       <div class="box-body col-lg-6">
+            <div class="box box-warning">
+
             <div class="box-header with-border">
-              <h3 class="box-title">Area Chart</h3>
+              <h3 class="box-title">Relatórios por Mes</h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -41,14 +40,59 @@
                 <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
               </div>
             </div>
-            <div class="box-body">
               <div class="chart">
-                <canvas id="areaChart" style="height:250px"></canvas>
+                <canvas id="areaChart" style="height:270px"></canvas>
               </div>
             </div>
             <!-- /.box-body -->
           </div>
-<?php $gol = 222?>
+    <div class="box-body col-lg-12">
+         <div class="box-header">
+                            <h3 class="box-title">Rendimentos Mensais</h3>
+                        </div>
+                                <div class="box-body">
+
+   <table id="example1" class="table table-bordered table-striped table-responsive">
+                                <thead>
+                                    <tr>
+                                        <th>Mes/Ano</th>
+                                        <th>Rendimento</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  <?php 
+       $conn = F_conect();
+
+                  $result1 = mysqli_query($conn, "call rendimento_por_mes(".$_SESSION['idUSU'].")");
+                  $total = 0;
+                      if (mysqli_num_rows($result1)){
+                            while ($row1 = $result1->fetch_assoc()) {
+                                   echo "<tr>";
+                                   echo "<td>".$row1['mes']."/".$row1['ano']."</td>";
+                                   echo "<td>".$row1['total_mes']."</td>";
+
+                                   echo "</tr>";
+                                   $total=$row1['total_mes']+$total;
+                                
+                             }
+                      }
+                                              $conn->close();
+
+                       
+      ?>
+
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Total: <?php echo $total;?> </th>
+
+                                    </tr>
+                                </tfoot>
+                            </table>
+                    </div>
+            </div>
+
+     </div>
     
     <!-- jQuery 2.2.3 -->
 <script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
@@ -63,6 +107,21 @@
 <!-- AdminLTE for demo purposes -->
 <script src="../dist/js/demo.js"></script>
 <script src="../plugins/chartjs/chart.min.js"></script>
+<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script>
+    $(function () {
+        $("#example1").DataTable();
+        $('#example2').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false
+        });
+    });
+</script>
 <!-- page script -->
 <script>
   $(function () {
@@ -175,28 +234,54 @@
     var areaChart = new Chart(areaChartCanvas);
 
     var areaChartData = {
-      labels: ["Janeito", "February", "March", "April", "May", "June", "July"],
+    
+      labels: [
+     <?php 
+       $conn = F_conect();
+
+                  $result1 = mysqli_query($conn, "call rendimento_por_mes(".$_SESSION['idUSU'].")");
+                  $count = 1;
+                  $totaLinhas = mysqli_num_rows($result1); 
+                      if (mysqli_num_rows($result1)){
+                            while ($row1 = $result1->fetch_assoc()) {
+                                if($totaLinhas > $count){
+                                   echo "'".$row1['mes']."/".$row1['ano']."',";
+                                }else{
+                                   echo "'".$row1['mes']."/".$row1['ano']."'";
+                            }
+                            $count++;
+                             }
+                      }
+                                              $conn->close();
+
+                       
+      ?>      
+],
       datasets: [
         {
-          label: "Electronics",
-          fillColor: "rgba(210, 214, 222, 1)",
-          strokeColor: "rgba(210, 214, 222, 1)",
-          pointColor: "rgba(210, 214, 222, 1)",
-          pointStrokeColor: "#c1c7d1",
-          pointHighlightFill: "#fff",
-          pointHighlightStroke: "rgba(220,220,220,1)",
-          data: [65, 59, 80, 81, 56, 55, 40]
-        },
-        {
-          label: "Digital Goods",
-          fillColor: "rgba(60,141,188,0.9)",
-          strokeColor: "rgba(60,141,188,0.8)",
-          pointColor: "#3b8bba",
-          pointStrokeColor: "rgba(60,141,188,1)",
-          pointHighlightFill: "#fff",
-          pointHighlightStroke: "rgba(60,141,188,1)",
-          data: [28, 48, 40, 19, 86, 27, 90]
+          
+          data: [  <?php 
+       $conn = F_conect();
+
+                  $result1 = mysqli_query($conn, "call rendimento_por_mes(".$_SESSION['idUSU'].")");
+                  $count = 1;
+                  $totaLinhas = mysqli_num_rows($result1); 
+                      if (mysqli_num_rows($result1)){
+                            while ($row1 = $result1->fetch_assoc()) {
+                                if($totaLinhas > $count){
+                                   echo "'".$row1['total_mes']."',";
+                                }else{
+                                   echo "'".$row1['total_mes']."'";
+                            }
+                            $count++;
+                             }
+                      }
+                                              $conn->close();
+
+                       
+      ?>]
         }
+      
       ]
     };
 

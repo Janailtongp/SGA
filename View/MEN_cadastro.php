@@ -78,9 +78,14 @@ include("head.php");
                     <?php
                     require_once '../Controller/MensalidadeController.php';
                     if (isset($_POST["botao"])) {
+                        if($_POST['qtd']>0){
                         $objControl = new MensalidadeController();
                         $objControl->cadastrarMensalidades($_POST['inquilino'], $_POST['propriedade'], $_POST['data_vencimento'], $_POST['valor'], $_POST['qtd']);
-                    }
+                        }else{
+                            Alert("Erro!", "Adicione uma quantidade de meses positiva", "danger");
+                            
+                        }
+                        }
                     ?>     
 
                     <br/>

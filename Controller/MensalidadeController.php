@@ -47,7 +47,7 @@ class MensalidadeController {
         }
 
         Alert("Oba!", "Alocação realizada com sucesso!", "success");
-        echo "<a href='/SGA/view/MEN_listar.php'> Listar Propriedades</a>";
+        echo "<a href='/SGA/view/MEN_listar.php'> Listar Contratos</a>";
     }
 
     public function excluirContrato($id_propriedade, $id_inquilino) {

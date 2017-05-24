@@ -1,6 +1,5 @@
 
 
-
 <!-- First Container -->
 <div align="center">
   <h3 class="margin">O que é?</h3>
@@ -23,4 +22,3 @@
 <footer class="container-fluid bg-4 text-center">
   <p>Desenvolvido por : Alan Tavares e Janailton Galvão</p> 
 </footer>
-

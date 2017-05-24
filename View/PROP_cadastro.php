@@ -18,7 +18,7 @@ include("head.php");
         <div class="row">
             <!-- Left col -->
             <section class="col-lg-12 connectedSortable">
-                <div class="col-xs-6">
+                <div class="col-xs-12">
                     <form class="form-group" action="" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <input class="form-control" name="rua" type="text" placeholder="Rua" required>
@@ -44,7 +44,7 @@ include("head.php");
                   </select>
                 </div>
                         <div class="form-group">
-                            <input class="form-control" name="obs" type="text" placeholder="Observação" required>
+                            <input class="form-control" name="obs" type="text" placeholder="Observação" >
                         </div>
                         <button type="submit" class="btn btn-default" name="botao">Cadastrar</button>
                     </form>
@@ -60,10 +60,7 @@ include("head.php");
                     <br/>
 
                 </div>
-                <div class="col-xs-6">
-                    <img class="img-thumbnail" src="../imagens/logo.png" alt="Sistema de Gerenciamento de Alugueis - SGA">
-
-                </div>
+            
 
 
 

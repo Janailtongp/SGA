@@ -100,7 +100,7 @@ function listarMensalidades($id_propriedade,$id_inquilino) {
             from mensalidade m 
             where id_propriedade=".$id_propriedade." and id_iquilino=".$id_inquilino);
     date_default_timezone_set("America/Recife");
-    $data_atual = date('d/m/y');
+    $data_atual = date('d/m/Y');
     $array=explode("/",$data_atual);
                      
     $mes_atual = (int)$array[1];
@@ -133,8 +133,11 @@ function listarMensalidades($id_propriedade,$id_inquilino) {
             echo"<td>" . $row['valor'] . "</td>";
 
             echo"<td>" . $row['situacao'] . "</td>";
-            echo"<td><a href=MEN_pagamento.php?id=" . $row['id']."&id_inquilino=".$id_inquilino."&id_propriedade=".$id_propriedade."><i class='fa fa-credit-card' aria-hidden='true' alt='Realizar Pagamento'></i></a>
-                <a href=MEN_editar.php?id=" . $row['id']."><i class='fa fa-pencil-square-o' aria-hidden='true' alt='Realizar Pagamento'></i></a>
+            echo "<td>";
+            if (strcmp($row['situacao'], "Nao Pago") == 0){
+             echo"<a href=MEN_pagamento.php?id=" . $row['id']."&id_inquilino=".$id_inquilino."&id_propriedade=".$id_propriedade."><i class='fa fa-credit-card' aria-hidden='true' alt='Realizar Pagamento'></i></a>  ";
+            } 
+            echo"<a href=MEN_editar.php?id=" . $row['id']."><i class='fa fa-pencil-square-o' aria-hidden='true' alt='Realizar Pagamento'></i></a>
                         <a onclick='return confirmar();' href=MEN_excluir.php?id=" . $row['id'] . "&id_inquilino=".$id_inquilino."&id_propriedade=".$id_propriedade."><i class='fa fa-trash-o' aria-hidden='true'></i></a></td></tr>";
         }
     }
