@@ -70,6 +70,7 @@
                     <option value="Indisponível">Indisponível</option>
                  
                   </select>
+                     <br/>
                         <div class="form-group">
                             <input class="form-control" name="obs" type="text" placeholder="Observação" value="<?php echo $obs;?>"required>
                         </div>

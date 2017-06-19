@@ -33,7 +33,6 @@ DELIMITER $
    END
    $     
  
- // grafico 3: Grafico da quantidade dos pagamentos "Pagos" e nao "Pagos"  (por inquilino pode ser melhor por tabela)
  
  
  // grafico 4: Rendimento por mes

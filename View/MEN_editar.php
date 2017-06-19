@@ -71,7 +71,7 @@ include("head.php");
                  
                   </select>
 
-
+<br/>
                         <button type="submit" class="btn btn-default" name="botao">Atualizar</button>
                     </form>
 <?php
@@ -93,18 +93,7 @@ if (isset($_POST["botao"])) {
             </section>
             <!-- /.Left col -->
             <!-- right col (We are only adding the ID to make the widgets sortable)-->
-            <section class="col-lg-5 connectedSortable">
-
-                <!-- Map box -->
-
-                <!-- /.box -->
-
-
-
-
-                <!-- /.box -->
-
-            </section>
+            
             <!-- right col -->
         </div>
         <!-- /.row (main row) -->

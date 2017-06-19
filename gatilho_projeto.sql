@@ -1,15 +1,3 @@
-/*
-	gatilho
-	
-*/
-DELIMITER $
-
-CREATE TRIGGER insercao_usuario AFTER INSERT
-ON usuario
-FOR EACH ROW
-BEGIN
-	Insert into  bd_2(descricao) values (new.usuario);
-END$
 
 
 DELIMITER $
