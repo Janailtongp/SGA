@@ -61,7 +61,7 @@ include("head.php");
                   <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                   </div>
-                  <input type="text" class="form-control pull-right" id="datepicker" name="data_vencimento" placeholder="Dia de Inicio"  data-inputmask="'alias': 'dd/mm/yyyy'" data-mask required>
+                  <input type="text" class="form-control pull-right"  name="data_vencimento" placeholder="Dia de Inicio"  data-inputmask="'alias': 'dd/mm/yyyy'" data-mask required>
                 </div>
                 <!-- /.input group -->
               </div> 
@@ -73,7 +73,9 @@ include("head.php");
                             <input class="form-control" name="qtd" type="number" placeholder="Quantidade de Meses" required>
                         </div>
                         
-                        <button type="submit" class="btn btn-default" name="botao">Cadastrar</button>
+                        <button type="submit" class="btn btn-primary" name="botao">Cadastrar</button>
+                             <button type="button" onClick="javascript:window.history.go(-1);" class="btn btn-info">
+Voltar</button>
                     </form>
                     <?php
                     require_once '../Controller/MensalidadeController.php';

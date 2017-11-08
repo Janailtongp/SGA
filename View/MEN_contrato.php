@@ -118,12 +118,37 @@ include("head.php");
                                 <tfoot>
                                     <tr>
                                         <th> <a href="MEN_cadMensalidade.php?id_inquilino=<?php echo $id_inquilino;?>&id_propriedade=<?php echo $id_propriedade;?>"><i class="fa fa-plus-square" aria-hidden="true"></i></a></th>
+                                        <th></th>                                        <th></th>
 
-
+                                        <th>  <button type="button" onClick="javascript:window.history.go(-1);" class="btn btn-info">
+Voltar</button></th>
                                     </tr>
                                 </tfoot>
                             </table>
+<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"><i class="fa fa-question" aria-hidden="true"></i>
+</button>
+        
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
 
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Minhas Mensalidades</h4>
+      </div>
+      <div class="modal-body">
+          <p>Aqui estão listadas as mensalidades do contrato, para realizar o pagamento da mensalidade clique no ícone <i class="fa fa-credit-card"></i>.
+          </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
                         </div>
                         <!-- /.box-body -->
                     </div>

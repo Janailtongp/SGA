@@ -46,8 +46,15 @@ function pagamento($id_mensalidade,$id_inquilino,$id_propriedade){
         include '../Model/LOGS.php';
         //LOG__________
         if (NovoLog("Mensalidade " . $id_mensalidade . " paga", $_SESSION['idUSU'])){
+                echo"<script type='text/javascript'>";
 
-                header("Location: /SGA/view/MEN_contrato.php?id_inquilino=".$id_inquilino."&id_propriedade=".$id_propriedade);
+	echo "alert('Pagamento Realizado com sucesso!');";
+
+        echo "</script>";
+        echo "<script language='javascript' type='text/javascript'>
+window.location.href = 'javascript:window.history.go(-1);';
+</script>";
+               // header("Location: /SGA/view/MEN_contrato.php?id_inquilino=".$id_inquilino."&id_propriedade=".$id_propriedade);
 
         }
     } else {
@@ -67,8 +74,14 @@ function excluirMensalidade($id_mensalidade,$id_propriedade,$id_inquilino) {
         //LOG__________
         if (NovoLog("Mensalidade " . $id_mensalidade." excluida", $_SESSION['idUSU'])){
 
-                header("Location: /SGA/view/MEN_contrato.php?id_inquilino=".$id_inquilino."&id_propriedade=".$id_propriedade);
+            echo"<script type='text/javascript'>";
 
+	echo "alert('Mensalidade Excluida com Sucesso!');";
+
+        echo "</script>";
+        echo "<script language='javascript' type='text/javascript'>
+window.location.href = 'javascript:window.history.go(-1);';
+</script>";
         }
     $conn->close();
 }

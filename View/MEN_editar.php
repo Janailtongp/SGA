@@ -72,7 +72,9 @@ include("head.php");
                   </select>
 
 <br/>
-                        <button type="submit" class="btn btn-default" name="botao">Atualizar</button>
+                        <button type="submit" class="btn btn-primary" name="botao">Atualizar</button>
+                        <button type="button" onClick="javascript:window.history.go(-1);" class="btn btn-info">
+Voltar</button>
                     </form>
 <?php
 require_once '../Controller/MensalidadeController.php';
