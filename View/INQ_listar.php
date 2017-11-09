@@ -141,8 +141,9 @@ include("foot.php");
         <h4 class="modal-title">Meus Inquilinos</h4>
       </div>
       <div class="modal-body">
-          <p>Aqui estão listados seus inquilinos. <br/>
-          Para adicionar um novo inquilinos você seleciona o ícone <i class="fa fa-plus-square" aria-hidden="true"></i> no canto inferior esquerdo da tabela.</p>
+          <p>Para adicionar um novo inquilino clique no ícone <i class="fa fa-plus-square" aria-hidden="true"></i> </p>
+          <p>Para editar inquilino clique no ícone <i class="fa fa-pencil"></i></p>
+          <p>Para excluir um inquilino clique no ícone <i class="fa fa-trash"></i></p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>

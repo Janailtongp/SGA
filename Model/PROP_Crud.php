@@ -52,8 +52,13 @@ if($conn->query($sql)){
     include '../Model/LOGS.php';
     //LOG__________
     if (NovoLog("Propriedade com ID " . $id . " excluida", $_SESSION['idUSU'])){
-        
-            header("Location: /SGA/view/PROP_listar.php");
+        	echo "<script language='javascript' type='text/javascript'>"
+        . "alert('Propriedade excluída com sucesso!');";
+
+            echo "</script>";
+        echo "<script language='javascript' type='text/javascript'>
+window.location.href = 'javascript:window.history.go(-1);';
+</script>";
 
     }
 }

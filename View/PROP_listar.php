@@ -116,8 +116,10 @@ for ( j = 0; j < tagsAlvo.length; j++ ) tagsAlvo[ j ].style.fontSize = tamanhos[
         <h4 class="modal-title">Minhas Propriedades</h4>
       </div>
       <div class="modal-body">
-          <p>Nas ações você pode editar e excluir uma propriedade. <br/>
-          Para adicionar uma nova propriedade você seleciona o ícone <i class="fa fa-plus-square" aria-hidden="true"></i> no canto inferior esquerdo da tabela.</p>
+          <p>Para adicionar uma nova propriedade clique no ícone <i class="fa fa-plus-square" aria-hidden="true"></i> </p>
+          <p>Para editar uma propriedade clique no ícone <i class="fa fa-pencil"></i></p>
+          <p>Para excluir uma propriedade clique no ícone <i class="fa fa-trash"></i></p>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>

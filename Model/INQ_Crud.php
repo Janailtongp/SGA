@@ -67,5 +67,11 @@ function excluirInquilino($id, $id_usu) {
     }
 
     $conn->close();
-    header("Location: /SGA/view/INQ_listar.php");
+    	echo "<script language='javascript' type='text/javascript'>"
+        . "alert('Inquilino excluído com sucesso!');";
+
+            echo "</script>";
+        echo "<script language='javascript' type='text/javascript'>
+window.location.href = 'javascript:window.history.go(-1);';
+</script>";
 }

@@ -115,7 +115,7 @@ for ( j = 0; j < tagsAlvo.length; j++ ) tagsAlvo[ j ].style.fontSize = tamanhos[
       </div>
       <div class="modal-body">
           <p>Aqui estão listados seus contratos, para ver as mensalidades de cada contrato clique no icone <i class="fa fa-eye"></i>.
-          Nela você poderá monitorar as mensalidades, e atualizar os aluguéis dos seus inquilinos. <br/>
+         <br/> Nela você poderá monitorar as mensalidades, e atualizar os aluguéis dos seus inquilinos. <br/>
           Para adicionar um novo contrato você seleciona o ícone <i class="fa fa-plus-square" aria-hidden="true"></i> no canto inferior esquerdo da tabela.</p>
       </div>
       <div class="modal-footer">
