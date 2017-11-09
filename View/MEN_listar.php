@@ -89,18 +89,20 @@ for ( j = 0; j < tagsAlvo.length; j++ ) tagsAlvo[ j ].style.fontSize = tamanhos[
                                     <tr>
                                         <th> <a href="MEN_cadastro.php"><i class="fa fa-plus-square" aria-hidden="true"></i></a></th>
                                         <th></th>
-                                        <th><a href="javascript:mudaTamanho('texto', 1);"><i class="fa fa-level-up" aria-hidden="true"></i>
-</a>                                    <a href="javascript:mudaTamanho('texto', -1);"><i class="fa fa-level-down" aria-hidden="true"></i> 
-                                        </th>
+                                        
 
                                     </tr>
                                 </tfoot>
                             </table>
                             <!-- Trigger the modal with a button -->
-                         
+                                        
 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"><i class="fa fa-question" aria-hidden="true"></i>
 </button>
-        
+       <button type="button" onClick="javascript:window.history.go(-1);" class="btn btn-info">Voltar</button>                    
+       <a href="javascript:mudaTamanho('texto', 1);">+<i class="fa fa-font fa-2x" aria-hidden="true"></i></a>
+       <a href="javascript:mudaTamanho('texto', -1);">-<i class="fa fa-font fa-1x" aria-hidden="true"></i> </a>
+                                                        
+                       
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -113,7 +115,8 @@ for ( j = 0; j < tagsAlvo.length; j++ ) tagsAlvo[ j ].style.fontSize = tamanhos[
       </div>
       <div class="modal-body">
           <p>Aqui estão listados seus contratos, para ver as mensalidades de cada contrato clique no icone <i class="fa fa-eye"></i>.
-          Nela você poderá monitorar as mensalidades, e atualizar os aluguéis dos seus inquilinos.</p>
+          Nela você poderá monitorar as mensalidades, e atualizar os aluguéis dos seus inquilinos. <br/>
+          Para adicionar um novo contrato você seleciona o ícone <i class="fa fa-plus-square" aria-hidden="true"></i> no canto inferior esquerdo da tabela.</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>

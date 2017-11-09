@@ -12,8 +12,40 @@ include("head.php");
       return false; 
   }
 </script>
+                          <script type="text/javascript">
+// Início do código de Aumentar/ Diminuir a letra
+ 
+// Para usar coloque o comando:
+// "javascript:mudaTamanho('tag_ou_id_alvo', -1);" para diminuir
+// e o comando "javascript:mudaTamanho('tag_ou_id_alvo', +1);" para aumentar
+ 
+var tagAlvo = new Array('p'); //pega todas as tags p//
+ 
+// Especificando os possíveis tamanhos de fontes, poderia ser: x-small, small...
+var tamanhos = new Array('14px','15px','16px','17px','18px' );
+var tamanhoInicial = 2;
+ 
+function mudaTamanho( idAlvo,acao ){
+if (!document.getElementById) return
+var selecionados = null,tamanho = tamanhoInicial,i,j,tagsAlvo;
+tamanho += acao;
+if ( tamanho < 0 ) tamanho = 0;
+if ( tamanho > 6 ) tamanho = 6;
+tamanhoInicial = tamanho;
+if ( !( selecionados = document.getElementById( idAlvo ) ) ) selecionados = document.getElementsByTagName( idAlvo )[ 0 ];
+ 
+selecionados.style.fontSize = tamanhos[ tamanho ];
+ 
+for ( i = 0; i < tagAlvo.length; i++ ){
+tagsAlvo = selecionados.getElementsByTagName( tagAlvo[ i ] );
+for ( j = 0; j < tagsAlvo.length; j++ ) tagsAlvo[ j ].style.fontSize = tamanhos[ tamanho ];
+}
+}
+// Fim do código de Aumentar/ Diminuir a letra
+ 
+</script>
 <!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
+<div class="content-wrapper" id="texto">
     <!-- Content Header (Page header) -->
 
 
@@ -66,7 +98,34 @@ include("head.php");
                                     </tr>
                                 </tfoot>
                             </table>
+<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"><i class="fa fa-question" aria-hidden="true"></i>
+</button>
+       <button type="button" onClick="javascript:window.history.go(-1);" class="btn btn-info">Voltar</button>                    
+       <a href="javascript:mudaTamanho('texto', 1);">+<i class="fa fa-font fa-2x" aria-hidden="true"></i></a>
+       <a href="javascript:mudaTamanho('texto', -1);">-<i class="fa fa-font fa-1x" aria-hidden="true"></i> </a>
+                                                        
+                       
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
 
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Minhas Propriedades</h4>
+      </div>
+      <div class="modal-body">
+          <p>Nas ações você pode editar e excluir uma propriedade. <br/>
+          Para adicionar uma nova propriedade você seleciona o ícone <i class="fa fa-plus-square" aria-hidden="true"></i> no canto inferior esquerdo da tabela.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
                         </div>
                         <!-- /.box-body -->
                     </div>

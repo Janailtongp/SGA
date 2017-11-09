@@ -75,6 +75,7 @@
                             <input class="form-control" name="obs" type="text" placeholder="Observação" value="<?php echo $obs;?>"required>
                         </div>
                         <button type="submit" class="btn btn-default" name="botao">Atualizar</button>
+                        <button type="button" onClick="javascript:window.history.go(-1);" class="btn btn-info">Voltar</button>    
                     </form>
         <?php
             require_once '../Controller/PropiedadeController.php';
