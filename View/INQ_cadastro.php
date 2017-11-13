@@ -32,6 +32,8 @@ include("head.php");
 
 
                         <button type="submit" class="btn btn-default" name="botao">Cadastrar</button>
+						                        <button type="button" onClick="javascript:window.history.go(-1);" class="btn btn-info">Voltar</button>    
+
                     </form>
                     <?php
                     require_once '../Controller/IquilinoController.php';
