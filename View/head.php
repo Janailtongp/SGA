@@ -94,6 +94,7 @@
                 <div class="pull-left">
                     <a href="profile.php" class="btn btn-default btn-flat">Profile</a>
                 </div>
+
                 <div class="pull-right">
                    <a href="logout.php" class="btn btn-default btn-flat">Sair</a>
                     
@@ -101,8 +102,11 @@
               </li>
             </ul>
           </li>
-       
+       <li>
+            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+          </li>
         </ul>
+		
       </div>
     </nav>
   </header>
